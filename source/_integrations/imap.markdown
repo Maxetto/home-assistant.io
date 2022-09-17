@@ -36,6 +36,11 @@ port:
   required: false
   default: 993
   type: integer
+ssl:
+  description: Whether to use SSL/TLS encryption to connect to the IMAP server.
+  required: false
+  default: true
+  type: boolean
 name:
   description: Name of the IMAP sensor.
   required: false
@@ -92,6 +97,7 @@ sensor:
   - platform: imap
     server: imap.gmail.com
     port: 993
+    ssl: true
     username: YOUR_USERNAME
     password: YOUR_PASSWORD
     search: FROM <sender@email.com>, SUBJECT <subject here>
